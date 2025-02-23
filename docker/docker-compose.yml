@@ -15,7 +15,9 @@ services:
     networks:
       - app_network
   php:
-    image: php:8.2-fpm
+    build:
+      context: ../docker
+      dockerfile: php/Dockerfile
     container_name: php-container
     volumes:
       - ../project:/var/www/html
